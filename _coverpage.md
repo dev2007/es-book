@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-![logo](_media/elastic-logo.svg ':size=10%')
+![logo](_media/elastic-logo.svg ':size=50%')
 
 # Elasticsearch Java High Level REST Client
 
