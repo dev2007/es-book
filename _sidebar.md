@@ -4,7 +4,8 @@
   * [API版本](/version)
 * 入门
   * [Elasticsearch 介绍](/notes/es_basic)
-  * [基本概念与安装部署](/notes/es_contents)
+  * [安装与部署](/notes/es_setup)
+  * [基本概念](/notes/es_contents)
 * Client APIs
   * 索引APIs | Index APIs
     * [创建索引API | Create Index API](/apis/index/create_index)
