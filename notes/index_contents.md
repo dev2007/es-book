@@ -270,6 +270,6 @@ JSON中的`description`字段相关属性示例如下：
 
 `aliases`下的为当前索引的别名，示例中的别名为：`alias_1`和`alias_2`。
 
-别名`alias_2`中琮有`filter`和`routing`。`filter`代表用此别名查询时，数据会按此过滤器过滤；`routing`则代表用此别名时，路由到的分片，避免分片操作。
+别名`alias_2`中还有`filter`和`routing`。`filter`代表用此别名查询时，数据会按此过滤器过滤；`routing`则代表用此别名时，路由到的分片，避免分片操作。
 
 > 其他一些参数暂不涉及，不作介绍。
