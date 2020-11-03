@@ -184,6 +184,8 @@ JSON中的`description`字段相关属性示例如下：
 
 `description`字段，类型为`text`，然后映射出一个字段`keyword`，这个字段的类型为`keyword`。通过字段的字段，将数据拆分为多种类型进行搜索。
 
+> 其他一些参数暂不涉及，不作介绍。
+
 ## 设置部分
 
 > 索引设置json部分
@@ -207,7 +209,7 @@ JSON中的`description`字段相关属性示例如下：
 
 - `number_of_replicas`：备份数，默认为1
 
-> [官方setting参数说明]（https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html#index-modules-settings）
+> [官方setting参数说明](https://www.elastic.co/guide/en/elasticsearch/reference/current/index-modules.html#index-modules-settings)
 
 索引(index)相关设置参数见下表：
 
@@ -232,19 +234,21 @@ JSON中的`description`字段相关属性示例如下：
 |  | max_inner_result_window | 索引内部命中和最高命中聚集最大值（即`from` + `size`的值），默认值`100` |
 |  | max_rescore_window | 搜索索引重打分（`rescore`）请求时的`window_size`最大值（默认与`max_result_window`一样默认`10000`） |
 |  | max_docvalue_fields_search | 允许查询`docvalue_fields`最大值，默认值`100` |
-|  | max_script_fields |  |
-|  | max_ngram_diff |  |
-|  | max_shingle_diff |  |
-|  | max_refresh_listeners |  |
-|  | analyze.max_token_count |  |
-|  | highlight.max_analyzed_offset |  |
-|  | max_terms_count |  |
-|  | max_regex_length |  |
-|  | routing.allocation.enable |  |
-|  | routing.rebalance.enable |  |
-|  | gc_deletes |  |
-|  | default_pipeline |  |
-|  | final_pipeline |  |
+|  | max_script_fields | 允许查询`script_fields`最大值，默认值`32` |
+|  | max_ngram_diff | 用于`NGramTokenizer`和`NGramTokenFilter`的，`min_gram`和`max_gram`之间的最大差值 ，默认值`1` |
+|  | max_shingle_diff | 用于`shingle token filter`的，`max_shingle_size`和`min_shingle_size`之间的最大差值，默认值`3` |
+|  | max_refresh_listeners | 每个索引分片上的最大刷新监听器数量。 |
+|  | analyze.max_token_count | 用于_analyze API的最大标记值，默认值`10000` |
+|  | highlight.max_analyzed_offset | 用于高亮请求的可分析最大字符数量，仅对无`offsets`和`term vectors`的文本高亮请求有效。默认值`1000000` |
+|  | max_terms_count | 用于词语查询最大词语数量，默认值`65536` |
+|  | max_regex_length | 用于正则查询的最大正则长度，默认值`1000` |
+|  | routing.allocation.enable | 控制索引的分片分配。默认值`all`，值有：`all`、`primaries`、`new_primaries`、`none` |
+|  | routing.rebalance.enable | 允许索引分片重平衡，默认值`all`，值有：`all`、`primaries`、`replicas`、`none` |
+|  | gc_deletes | 已删除文档的版本号可用于进一步版本化操作的时长，默认值`60s` |
+|  | default_pipeline | 索引的默认摄取节点（ingest node）管道。可使用参数`pipeline`重载。特定参数`_none`表明不会运行摄取节点管道。 |
+|  | final_pipeline | 索引的最终摄取节点（ingest node）管道。特定参数`_none`表明不会运行摄取节点管道。 |
+
+> 其他一些参数暂不涉及，不作介绍。
 
 ## 别名部分
 
@@ -263,3 +267,9 @@ JSON中的`description`字段相关属性示例如下：
   }
 }
 ```
+
+`aliases`下的为当前索引的别名，示例中的别名为：`alias_1`和`alias_2`。
+
+别名`alias_2`中琮有`filter`和`routing`。`filter`代表用此别名查询时，数据会按此过滤器过滤；`routing`则代表用此别名时，路由到的分片，避免分片操作。
+
+> 其他一些参数暂不涉及，不作介绍。
