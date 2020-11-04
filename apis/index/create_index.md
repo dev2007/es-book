@@ -185,4 +185,4 @@ boolean shardsAcknowledged = createIndexResponse.isShardsAcknowledged();
 
 ## 扩展
 
-> 关于索引（index）、索引的属性、索引的配置(settings)、索引的映射（mappings）、文档（document）、节点（node）、分片(shard)，请看：[基本概念](/notes/es_contents)
+> 索引的相关介绍，见：[索引相关概念](/notes/index_contents?id=索引相关概念)

@@ -5,6 +5,7 @@
 * 入门
   * [Elasticsearch 介绍](/notes/es_basic)
   * [安装与部署](/notes/es_setup)
+  * [相关名词](/notes/es_noun)
   * [基本概念](/notes/es_contents)
   * [索引相关概念](/notes/index_contents)
 * Client APIs
