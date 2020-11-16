@@ -35,12 +35,11 @@ request.mapping(
         "      \"type\": \"text\"\n" +
         "    }\n" +
         "  }\n" +
-        "}", 
+        "}",
         XContentType.JSON);
 ```
 
 映射（mappings）源可以用不同的方式添加，以上示例为JSON字符串设置的映射属性。
-
 
 ```java
 Map<String, Object> message = new HashMap<>();
@@ -123,7 +122,7 @@ request.setMasterTimeout(TimeValue.timeValueMinutes(1));
 
 3. 在创建索引API响应前，激活的分片复本(shard copies)数,使用`int`或`ActiveShardCount`配置
 
-```
+```java
 request.waitForActiveShards(ActiveShardCount.from(2)); 
 request.waitForActiveShards(ActiveShardCount.DEFAULT); 
 ```
@@ -145,7 +144,7 @@ CreateIndexResponse createIndexResponse = client.indices().create(request, Reque
 执行`CreateIndexRequest`也可以异步的形式进行，这样客户端可以直接返回。用户需要通过传递参数`request`和`listener`给异步方法来指定如何处理响应及潜在失败：
 
 ```java
-client.indices().createAsync(request, RequestOptions.DEFAULT, listener); 
+client.indices().createAsync(request, RequestOptions.DEFAULT, listener);
 ```
 
 异步方法不会阻塞，会直接返回。一旦它执行完成时，如果成功，`ActionListener`中的方法`onResponse`将会被回调；如果失败，`onFailure`将会被回调。失败情形和期待的异常与同步执行时一样。

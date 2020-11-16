@@ -16,4 +16,4 @@
 | routing | 路由 |
 | term | 词语 |
 | token | 标识 |
-| filter | 过滤器 ｜
+| filter | 过滤器 |

@@ -11,7 +11,7 @@
 * Client APIs
   * 索引APIs | Index APIs
     * [创建索引API | Create Index API](/apis/index/create_index)
-    * [Delete Index API]
+    * [删除索引API | Delete Index API](/apis/index/delete_index)
     * [Index Exists API]
     * [Get Index API]
     * [Open Index API]
