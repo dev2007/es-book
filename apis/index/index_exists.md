@@ -41,6 +41,16 @@ public IndicesOptions(EnumSet<Option> options, EnumSet<WildcardStates> expandWil
 
 `IndicesOptions`预置几种默认配置，如下：
 
+```java
+public static final IndicesOptions STRICT_EXPAND_OPEN = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES), EnumSet.of(WildcardStates.OPEN));
+public static final IndicesOptions LENIENT_EXPAND_OPEN = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES, Option.IGNORE_UNAVAILABLE), EnumSet.of(WildcardStates.OPEN));
+public static final IndicesOptions LENIENT_EXPAND_OPEN_CLOSED = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES, Option.IGNORE_UNAVAILABLE), EnumSet.of(WildcardStates.OPEN, WildcardStates.CLOSED));
+public static final IndicesOptions STRICT_EXPAND_OPEN_CLOSED = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES), EnumSet.of(WildcardStates.OPEN, WildcardStates.CLOSED));
+public static final IndicesOptions STRICT_EXPAND_OPEN_FORBID_CLOSED = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES, Option.FORBID_CLOSED_INDICES), EnumSet.of(WildcardStates.OPEN));
+public static final IndicesOptions STRICT_EXPAND_OPEN_FORBID_CLOSED_IGNORE_THROTTLED = new IndicesOptions(EnumSet.of(Option.ALLOW_NO_INDICES, Option.FORBID_CLOSED_INDICES, Option.IGNORE_THROTTLED), EnumSet.of(WildcardStates.OPEN));
+public static final IndicesOptions STRICT_SINGLE_INDEX_NO_EXPAND_FORBID_CLOSED = new IndicesOptions(EnumSet.of(Option.FORBID_ALIASES_TO_MULTIPLE_INDICES, Option.FORBID_CLOSED_INDICES), EnumSet.noneOf(WildcardStates.class));
+```
+
 - `Option`为不可用索引的处理方式，如下：
 
 ```java
