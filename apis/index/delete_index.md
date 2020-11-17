@@ -79,7 +79,7 @@ ActionListener<AcknowledgedResponse> listener =
 
 > `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`CreateIndexRequest`执行失败时被调用
+> `onFailure`：`DeleteIndexRequest`执行失败时被调用
 
 ## 删除索引响应
 
