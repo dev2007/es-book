@@ -13,7 +13,7 @@
     * [创建索引API | Create Index API](/apis/index/create_index)
     * [删除索引API | Delete Index API](/apis/index/delete_index)
     * [索引存在API | Index Exists API](/apis/index/index_exists)
-    * [Get Index API]
+    * [获取索引API | Get Index API](/apis/index/get_index)
     * [Open Index API]
     * [Close Index API]
     * [Analyze API]
