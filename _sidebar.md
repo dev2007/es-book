@@ -14,7 +14,7 @@
     * [删除索引API | Delete Index API](/apis/index/delete_index)
     * [索引存在API | Index Exists API](/apis/index/index_exists)
     * [获取索引API | Get Index API](/apis/index/get_index)
-    * [Open Index API]
+    * [开启索引API | Open Index API](/apis/index/open_index)
     * [Close Index API]
     * [Analyze API]
     * [Shrink Index API]
