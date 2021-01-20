@@ -71,7 +71,7 @@ client.indices().openAsync(request, RequestOptions.DEFAULT, listener);
 
 异步方法不会阻塞，会直接返回。一旦它执行完成时，如果成功，`ActionListener`中的方法`onResponse`将会被回调；如果失败，`onFailure`将会被回调。失败情形和期待的异常与同步执行时一样。
 
-一种典型的获取索引的监听器示例如下：
+一种典型的打开索引的监听器示例如下：
 
 ```java
 ActionListener<OpenIndexResponse> listener =

@@ -15,7 +15,7 @@
     * [索引存在API | Index Exists API](/apis/index/index_exists)
     * [获取索引API | Get Index API](/apis/index/get_index)
     * [开启索引API | Open Index API](/apis/index/open_index)
-    * [Close Index API]
+    * [关闭索引API | Close Index API](/apis/index/close_index)
     * [Analyze API]
     * [Shrink Index API]
     * [Split Index API]
