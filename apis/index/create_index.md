@@ -165,9 +165,9 @@ ActionListener<CreateIndexResponse> listener =
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`CreateIndexRequest`执行失败时被调用
+- `onFailure`：`CreateIndexRequest`执行失败时被调用
 
 ## 创建索引响应
 
@@ -178,10 +178,10 @@ boolean acknowledged = createIndexResponse.isAcknowledged();
 boolean shardsAcknowledged = createIndexResponse.isShardsAcknowledged();
 ```
 
-> `isAcknowledged`显示是否所有的节点(node)已响应此请求
+- `isAcknowledged`显示是否所有的节点(node)已响应此请求
 
-> `isShardsAcknowledged`显示在超时前，是否为索引中的每个分片（shard）开启了必需数量的分片复本(shard copies)
+- `isShardsAcknowledged`显示在超时前，是否为索引中的每个分片（shard）开启了必需数量的分片复本(shard copies)
 
 ## 扩展
 
-> 索引的相关介绍，见：[索引相关概念](/notes/index_contents?id=索引相关概念)
+- 索引的相关介绍，见：[索引相关概念](/notes/index_contents?id=索引相关概念)

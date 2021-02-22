@@ -21,33 +21,33 @@ request.timeout(TimeValue.timeValueMinutes(2));
 request.timeout("2m");
 ```
 
-> 超时值，用于等待所有节点确认索引开启，`TimeValue` 类型
+- 超时值，用于等待所有节点确认索引开启，`TimeValue` 类型
 
-> 超时值，用于等待所有节点确认索引开启，`String` 类型
+- 超时值，用于等待所有节点确认索引开启，`String` 类型
 
 ```java
 request.masterNodeTimeout(TimeValue.timeValueMinutes(1));
 request.masterNodeTimeout("1m");
 ```
 
-> 连接主节点超时值，`TimeValue` 类型
+- 连接主节点超时值，`TimeValue` 类型
 
-> 连接主节点超时值，`String` 类型
+- 连接主节点超时值，`String` 类型
 
 ```java
 request.waitForActiveShards(2);
 request.waitForActiveShards(ActiveShardCount.DEFAULT);
 ```
 
-> 等待的活动分片数，在开启索引API响应之前，`int` 类型
+- 等待的活动分片数，在开启索引API响应之前，`int` 类型
 
-> 等待的活动分片数，在开启索引API响应之前，`ActiveShardCount` 类型
+- 等待的活动分片数，在开启索引API响应之前，`ActiveShardCount` 类型
 
 ```java
 request.indicesOptions(IndicesOptions.strictExpandOpen());
 ```
 
-> 设置 `IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
+- 设置 `IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
 
 ## 同步执行
 
@@ -86,9 +86,9 @@ ActionListener<OpenIndexResponse> listener =
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`GetIndexRequest`执行失败时被调用
+- `onFailure`：`GetIndexRequest`执行失败时被调用
 
 ## 开启索引响应
 
@@ -99,6 +99,6 @@ boolean acknowledged = openIndexResponse.isAcknowledged();
 boolean shardsAcked = openIndexResponse.isShardsAcknowledged();
 ```
 
-> `isAcknowledged`显示是否所有的节点(node)已响应此请求
+- `isAcknowledged`显示是否所有的节点(node)已响应此请求
 
-> `isShardsAcknowledged`显示在超时前，是否为索引中的每个分片（shard）开启了必需数量的分片复本(shard copies)
+- `isShardsAcknowledged`显示在超时前，是否为索引中的每个分片（shard）开启了必需数量的分片复本(shard copies)

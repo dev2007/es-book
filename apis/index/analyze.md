@@ -14,7 +14,7 @@
 AnalyzeRequest request = AnalyzeRequest.withGlobalAnalyzer("english","Some text to analyze", "Some more text to analyze");
 ```
 
-> 第一个参数指定内置分词器；其他参数的多个字符串被视为多值字段。
+- 第一个参数指定内置分词器；其他参数的多个字符串被视为多值字段。
 
 你可以配置自定义的分词器：
 
@@ -29,11 +29,11 @@ AnalyzeRequest request = AnalyzeRequest.buildCustomAnalyzer("standard")
     .build("<b>Some text to analyze</b>");
 ```
 
-> `stopFilter.put("stopwords", new String[]{ "to" })` 配置一个标记过滤器(`tokenfilter`)
-> `AnalyzeRequest.buildCustomAnalyzer("standard")` 配置标记器(`tokenizer`)
-> `addCharFilter("html_strip")` 配置字符过滤器
-> `addTokenFilter("lowercase")` 添加内置标记过滤器
-> `addTokenFilter(stopFilter)` 添加自定义标记过滤器
+- `stopFilter.put("stopwords", new String[]{ "to" })` 配置一个标记过滤器(`tokenfilter`)
+- `AnalyzeRequest.buildCustomAnalyzer("standard")` 配置标记器(`tokenizer`)
+- `addCharFilter("html_strip")` 配置字符过滤器
+- `addTokenFilter("lowercase")` 添加内置标记过滤器
+- `addTokenFilter(stopFilter)` 添加自定义标记过滤器
 
 你也可以通过仅包括字符过滤器（`charfilter`）和标记过滤器（`tokenfilter`） 创建一个自定义的标准化器（`normalizer`）：
 
@@ -78,8 +78,8 @@ request.explain(true);
 request.attributes("keyword", "type");
 ```
 
-> 设置 `explain` 为 `true`，将为响应增加更多的细节
-> 设置 `attributes`，允许只返回你感兴趣的标记（`token`）属性
+- 设置 `explain` 为 `true`，将为响应增加更多的细节
+- 设置 `attributes`，允许只返回你感兴趣的标记（`token`）属性
 
 ## 同步执行
 
@@ -117,9 +117,8 @@ ActionListener<AnalyzeResponse> listener = new ActionListener<AnalyzeResponse>()
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
-
-> `onFailure`：全部 `AnalyzeRequest` 执行失败时被调用
+- `onResponse`：成功完成执行时被调用
+- `onFailure`：全部 `AnalyzeRequest` 执行失败时被调用
 
 ## 分析响应
 
@@ -129,7 +128,7 @@ ActionListener<AnalyzeResponse> listener = new ActionListener<AnalyzeResponse>()
 List<AnalyzeResponse.AnalyzeToken> tokens = response.getTokens();
 ```
 
-> `AnalyzeToken` 保存有关分析生成的单个标记的信息
+- `AnalyzeToken` 保存有关分析生成的单个标记的信息
 
 如果 `explain` 设置为 `true`，则改为从 `detail()` 方法返回信息：
 
@@ -137,4 +136,4 @@ List<AnalyzeResponse.AnalyzeToken> tokens = response.getTokens();
 DetailAnalyzeResponse detail = response.detail();
 ```
 
-> `DetailAnalyzeResponse` 保存有关分析链中各个子步骤生成的标记的更详细信息
+- `DetailAnalyzeResponse` 保存有关分析链中各个子步骤生成的标记的更详细信息

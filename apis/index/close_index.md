@@ -20,19 +20,19 @@ CloseIndexRequest request = new CloseIndexRequest("index");
 request.setTimeout(TimeValue.timeValueMinutes(2));
 ```
 
-> 超时值，用于等待所有节点确认索引开启，`TimeValue` 类型
+- 超时值，用于等待所有节点确认索引开启，`TimeValue` 类型
 
 ```java
 request.setMasterTimeout(TimeValue.timeValueMinutes(1));
 ```
 
-> 连接主节点超时值，`TimeValue` 类型
+- 连接主节点超时值，`TimeValue` 类型
 
 ```java
 request.indicesOptions(IndicesOptions.lenientExpandOpen());
 ```
 
-> 设置 `IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
+- 设置 `IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
 
 ## 同步执行
 
@@ -70,9 +70,9 @@ ActionListener<CloseIndexResponse> listener = new ActionListener<CloseIndexRespo
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`GetIndexRequest`执行失败时被调用
+- `onFailure`：`GetIndexRequest`执行失败时被调用
 
 ## 关闭索引响应
 
@@ -82,4 +82,4 @@ ActionListener<CloseIndexResponse> listener = new ActionListener<CloseIndexRespo
 boolean acknowledged = closeIndexResponse.isAcknowledged();
 ```
 
-> `isAcknowledged`显示是否所有的节点(node)已响应此请求
+- `isAcknowledged`显示是否所有的节点(node)已响应此请求

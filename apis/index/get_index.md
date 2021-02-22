@@ -20,13 +20,13 @@ GetIndexRequest request = new GetIndexRequest("index");
 request.includeDefaults(true);
 ```
 
->如果为`true`，未在索引中显示设置的值将返回默认值
+- 如果为`true`，未在索引中显示设置的值将返回默认值
 
 ```java
 request.indicesOptions(IndicesOptions.lenientExpandOpen());
 ```
 
->设置`IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
+- 设置`IndicesOptions`，用于控制如何解析不可用的索引以及如何扩展通配符表达式。可参看其他页面中的介绍[扩展：indicesoptions](apis/index/index_exists?id=扩展：indicesoptions)
 
 ## 同步执行
 
@@ -57,19 +57,17 @@ ActionListener<GetIndexResponse> listener =
     new ActionListener<GetIndexResponse>() {
         @Override
         public void onResponse(GetIndexResponse getIndexResponse) {
-            
         }
 
         @Override
         public void onFailure(Exception e) {
-            
         }
     };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`GetIndexRequest`执行失败时被调用
+- `onFailure`：`GetIndexRequest`执行失败时被调用
 
 ## 获取索引响应
 

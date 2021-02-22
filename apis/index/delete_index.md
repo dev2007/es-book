@@ -16,27 +16,27 @@ DeleteIndexRequest request = new DeleteIndexRequest("posts");
 
 以下参数可选配：
 
-- 所有节点(nodes)响应索引删除的超时时长，使用`TimeValue`配置
-- 所有节点(nodes)响应索引删除的超时时长，使用`字符串`配置
-
 ```java
 request.timeout(TimeValue.timeValueMinutes(2));
 request.timeout("2m");
 ```
 
-- 连接主节点的超时时长，使用`TimeValue`配置
-- 连接主节点的超时时长，使用`字符串`配置
+- 所有节点(nodes)响应索引删除的超时时长，使用`TimeValue`配置
+- 所有节点(nodes)响应索引删除的超时时长，使用`字符串`配置
 
 ```java
 request.masterNodeTimeout(TimeValue.timeValueMinutes(1));
 request.masterNodeTimeout("1m");
 ```
 
-- 设置`IndicesOptions`用于控制，如何解析不可用索引和如何展开通配符表达式
+- 连接主节点的超时时长，使用`TimeValue`配置
+- 连接主节点的超时时长，使用`字符串`配置
 
 ```java
 request.indicesOptions(IndicesOptions.lenientExpandOpen());
 ```
+
+- 设置`IndicesOptions`用于控制，如何解析不可用索引和如何展开通配符表达式
 
 ## 同步执行
 
@@ -67,19 +67,17 @@ ActionListener<AcknowledgedResponse> listener =
         new ActionListener<AcknowledgedResponse>() {
     @Override
     public void onResponse(AcknowledgedResponse deleteIndexResponse) {
-        
     }
 
     @Override
     public void onFailure(Exception e) {
-        
     }
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`DeleteIndexRequest`执行失败时被调用
+- `onFailure`：`DeleteIndexRequest`执行失败时被调用
 
 ## 删除索引响应
 
@@ -89,7 +87,7 @@ ActionListener<AcknowledgedResponse> listener =
 boolean acknowledged = deleteIndexResponse.isAcknowledged();
 ```
 
-> `isAcknowledged`显示是否所有的节点(node)已响应此请求
+- `isAcknowledged`显示是否所有的节点(node)已响应此请求
 
 如果索引不存在，`ElasticsearchException`异常会被抛出：
 
@@ -99,9 +97,8 @@ try {
     client.indices().delete(request, RequestOptions.DEFAULT);
 } catch (ElasticsearchException exception) {
     if (exception.status() == RestStatus.NOT_FOUND) {
-        
     }
 }
 ```
 
-> 状态`RestStatus.NOT_FOUND`，即索引不存在时，可在代码中进行相应的操作
+- 状态`RestStatus.NOT_FOUND`，即索引不存在时，可在代码中进行相应的操作

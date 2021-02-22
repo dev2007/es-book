@@ -16,10 +16,10 @@
     * [获取索引API | Get Index API](/apis/index/get_index)
     * [开启索引API | Open Index API](/apis/index/open_index)
     * [关闭索引API | Close Index API](/apis/index/close_index)
-    * [分析API | Analyze API](/apis/index/analyze)
-    * [Shrink Index API]
+    * [收缩索引API | Shrink Index API](/apis/index/shrink_index)
     * [Split Index API]
     * [Clone Index API]
+    * [分析API | Analyze API](/apis/index/analyze)
     * [Refresh API]
     * [Flush API]
     * [Flush Synced API]

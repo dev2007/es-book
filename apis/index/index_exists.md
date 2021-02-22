@@ -130,19 +130,17 @@ client.indices().existsAsync(request, RequestOptions.DEFAULT, listener);
 ActionListener<Boolean> listener = new ActionListener<Boolean>() {
     @Override
     public void onResponse(Boolean exists) {
-        
     }
 
     @Override
     public void onFailure(Exception e) {
-        
     }
 };
 ```
 
-> `onResponse`：成功完成执行时被调用
+- `onResponse`：成功完成执行时被调用
 
-> `onFailure`：`GetIndexRequest`执行失败时被调用
+- `onFailure`：`GetIndexRequest`执行失败时被调用
 
 ## 响应
 
